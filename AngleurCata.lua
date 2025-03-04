@@ -534,7 +534,6 @@ end
 --***********[~]**********
 --**Decides which action to perform**
 --***********[~]**********
-local Localized_FishingSpellName = C_Spell.GetSpellInfo(51294).name
 function Angleur_ActionHandler(self)
     --print("WorldFrame Dragging: ", WorldFrame:IsDragging())
     if InCombatLockdown() then return end
@@ -611,8 +610,7 @@ function Angleur_ActionHandler(self)
                 self.visual.texture:SetTexture("Interface/AddOns/AngleurCata/imagesClassic/misc_arrowlup")
                 Angleur_SetCursorForGamePad(true)
             else
-                SetOverrideBindingClick_Custom(self, true, assignKey, "Angleur_ToyButton")
-                self.toyButton:SetAttribute("macrotext", "/cast " .. Localized_FishingSpellName)
+                SetOverrideBindingSpell_Custom(self, true, assignKey, PROFESSIONS_FISHING)
                 self.visual.texture:SetTexture("Interface/AddOns/AngleurCata/imagesClassic/UI_Profession_Fishing")
             end
         end

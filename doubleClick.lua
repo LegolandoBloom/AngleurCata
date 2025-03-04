@@ -62,7 +62,6 @@ function Angleur_DoubleClickWatcher(self, event, button)
         if angleurDoubleClick.watching == true then
             if IsMouseButtonDown(angleurDoubleClick.iDtoLeftRight[AngleurConfig.doubleClickChosenID]) then
                 MouselookStart()
-                print("starting mouse look")
             else
                 MouselookStop()
             end
